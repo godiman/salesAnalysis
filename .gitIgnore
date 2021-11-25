@@ -1,4 +1,5 @@
-./data/forecast.csv
+src/data/forecast.csv
 Superstore.xls
 TimeSeries.ipynb
 _venv
+.gitIgnore
