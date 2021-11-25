@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+    <div class="login-form">
+        <form method="POST" id="rform">{% csrf_token %}
+            <!--<img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
+            <h1 class="h3 mb-3 fw-normal" style="color: #000 !important; text-align:center">Sign In</h1>
+
+            <div class="form-floating mb-4">
+                <input type="email" name="email" class="form-control" id="id_email" placeholder="Email address">
+                <label for="floatingInput">Email address</label>
+            </div>
+            <div class="form-floating mb-5">
+                <input type="password" name="password" class="form-control" id="id_password" placeholder="Password">
+                <label for="floatingPassword">Registered password</label>
+            </div>
+            <div class="text-center mb-2">
+                <button class="w-50 btn btn-lg btn-outline-secondary text-uppercase fw-bold" type="submit">Sign In</button>
+            </div>
+        </form>
+        
+        {% for field in login_form %}
+            {% for error in field.errors %}
+                <p style="color: red; font-size: 14px;">{{error}}</p>
+            {% endfor %}
+        {% endfor %}
+
+        {% if login_form.non_field_errors %}
+            <p style="color: red; font-size: 14px;">{{login_form.non_field_errors}}</p>
+        {% endif %}
+    </div>
+
+{% endblock content %}
+

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+{% include 'snippets/header.html' %}
+
+    <style>
+    .main-content{
+      min-height: 100vh;
+      height: 100%;
+      margin-top: 50px;
+      margin-bottom: 8px;
+    }
+    </style>
+
+    
+  </head>
+  <body>
+	<div class="container-fluid container-bg" >
+    {% include 'snippets/navbar.html' %}
+		<!--App contents-->
+		<div class="main-content">
+			{% block content %}  {% endblock content %} 
+		</div>
+		<!--App contents-->
+
+		<!--App footer-->
+		
+	</div>
+    {% include 'snippets/footer.html' %}
+  </body>
+</html>

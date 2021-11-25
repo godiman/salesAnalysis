@@ -1,0 +1,35 @@
+************************INSTALLATION QUIDES**********************
+
+Create a folder in any directory of your choice
+
+Open command prompt and change directory to the folder you just Created
+
+Type this command "python -m venv _venv"  to create venv
+
+Type the command "_venv\Scripts\activate"
+
+(Be sure that your system is connected to the internet )
+
+Again, enter the command "pip install -r requirements.txt" 
+
+Download the dataset from the link below
+https://drive.google.com/file/d/1y1MDDFsaqSg5oPKJ8-fdTEF4SegMplXM/view?usp=sharing
+
+Put the dataset on the data folder (ie, src/data)
+
+Change directory to src folder (cd src)
+
+Start the server by typing the command bellow
+"python manage.py runserver"
+
+After the server has been start, visit "localhost:8000"
+
+Visit "localhost:8000/admin" to view the database
+
+
+Default account for both
+
+email: superstore@gmail.com
+passwors: password
+
+

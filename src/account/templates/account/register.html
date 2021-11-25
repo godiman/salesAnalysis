@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+
+    <div class=" login-form">
+
+        <form method="POST">{% csrf_token %}
+            <!--<img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
+            <h1 class="h3 mb-2 fw-normal" style="color: #000 !important; text-align:center">Register</h1>
+
+            <div class="form-floating mb-3">
+                <input type="text" name="first_name" class="form-control" id="id_first_name" placeholder="First name">
+                <label for="floatingInput">First name</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" name="last_name" class="form-control" id="id_last_name" placeholder="Last name">
+                <label for="floatingInput">Last name</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="email" name="email" class="form-control" id="id_email" placeholder="Email address">
+                <label for="floatingInput">Email</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="password" name="password1" class="form-control" id="id_password1" placeholder="Creeate password">
+                <label for="floatingPassword">Password</label>
+                
+            </div>
+            <div class="form-floating mb-4">
+                <input type="password" name="password2" class="form-control" id="id_password2" placeholder="Confirm password">
+                <label for="floatingPassword">Confirm password</label>
+            </div>
+            <div class="text-center">
+                <button class="w-50 btn btn-lg btn-success" type="submit">Register</button>
+            </div>
+        </form>
+        {% for field in registration_form %} 
+            {% for error in field.errors %}
+                <p style="color: red; font-size: 14px;">{{error}}</p>
+            {% endfor %}
+        {% endfor %}
+
+    </div>
+{% endblock content %}
